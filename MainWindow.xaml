@@ -1,0 +1,20 @@
+﻿<Window x:Class="ScheduleChangeAppWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScheduleChangeAppWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="300">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto"> 
+            <StackPanel>
+                <Button Content="Изменение пар" Padding="10" Click="ChangePairsButton_Click"/>
+                <Button Content="Изменение времени пар" Padding="10" Click="ChangeTimesPairsButton_Click"/>
+                <Button Content="Изменение информации для расписания" Padding="10" Click="ChangeInformationsScheduleButton_Click"/>
+                <Button Content="Изменение расписания экзаменов" Padding="10" Click="ChangeCellsScheduleExamsButton_Click"/>
+                <Button Content="Настройки" Padding="10" Click="ShowSettingsButton_Click"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

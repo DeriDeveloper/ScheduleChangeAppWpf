@@ -1,0 +1,59 @@
+﻿<Window x:Class="ScheduleChangeAppWpf.WindowChangeTimesPairs"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScheduleChangeAppWpf"
+        mc:Ignorable="d"
+        Title="WindowChangeTimesPairs" Height="450" Width="400">
+    <Grid>
+        <StackPanel>
+            <Menu>
+                <MenuItem Header="Главное меню" Click="ShowMainMenuWindow_Click"/>
+            </Menu>
+
+            <ScrollViewer>
+                <StackPanel>
+                    <CheckBox x:Name="CheckBoxIsChange" Content="Изменение?" IsChecked="True" Checked="CheckBoxIsChange_Checked" Unchecked="CheckBoxIsChange_Unchecked"/>
+
+                    <Label Content="Дата изменения:"/>
+                    <DatePicker x:Name="DatePickerDateChange" IsEnabled="True" SelectedDateChanged="DatePickerDateChange_SelectedDateChanged"  Width="250"/>
+
+                    <Label Content="День недели"/>
+                    <ComboBox x:Name="ComboBoxDayOfWeek" DisplayMemberPath="Name" SelectedValuePath="Value" SelectionChanged="ComboBoxDayOfWeek_SelectionChanged"/>
+
+                    <Label Content="Номер пары"/>
+                    <ComboBox x:Name="ComboBoxNumberPair" SelectionChanged="ComboBoxNumberPair_SelectionChanged"/>
+
+                    <Label Content="Время пары"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                            <Label Content="Начало пары"/>
+                            <StackPanel Orientation="Horizontal">
+                                <ComboBox x:Name="TimePairStartHour" MinWidth="60" SelectionChanged="TimePairStartHour_SelectionChanged"/>
+                                <Label Content=":"/>
+                                <ComboBox x:Name="TimePairStartMinutes" MinWidth="60" SelectionChanged="TimePairStartMinutes_SelectionChanged"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <Label  Grid.Column="1" Content="-" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                        <StackPanel Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                            <Label Content="Конец пары"/>
+                            <StackPanel Orientation="Horizontal">
+                                <ComboBox x:Name="TimePairEndHour" MinWidth="60" SelectionChanged="TimePairEndHour_SelectionChanged"/>
+                                <Label Content=":"/>
+                                <ComboBox x:Name="TimePairEndMinutes" MinWidth="60" SelectionChanged="TimePairEndMinutes_SelectionChanged"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Button x:Name="SaveButton" Content="Сохранить" Click="SaveButton_Click" Padding="10" Margin="0,15,0,0"/>
+                    <Button x:Name="DeleteButton" Content="Удалить" Click="DeleteButton_Click" Padding="10" Margin="0,15,0,0"/>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Window>
